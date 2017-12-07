@@ -1,5 +1,5 @@
 var error=0;
-var str;
+
     
     function validate_email( ){
         var email=document.getElementById("email").value;
@@ -11,7 +11,6 @@ var str;
         }
         else{
             document.getElementById("err_email").style.display="none";
-            str+="\nEmail : "+email;
             error=0;
         }
     }
@@ -27,7 +26,6 @@ var str;
         }
         else{
             document.getElementById("err_phone").style.display="none";
-            str+="\n Email : "+email;            
             error=0;
             
         }
@@ -43,7 +41,6 @@ var str;
         }
         else{
             document.getElementById("err_fname").style.display="none";
-            str+="\n First Name : "+fname;            
             error=0;
             
         }
@@ -59,8 +56,6 @@ var str;
         }
         else{
             document.getElementById("err_lname").style.display="none";
-            var lname=document.getElementById("lname").value
-            str+="\n Last Name : "+email;            
             error=0;            
         }
     } 
@@ -87,7 +82,6 @@ var str;
         }
         else{
             document.getElementById("err_dob").style.display="none";
-            str+="\n Dob : "+dob;            
             error=0;            
         }
     }
@@ -97,7 +91,6 @@ var str;
         for(var i=0;i<gender.length;i++){
             if(gender[i].checked){
                 document.getElementById("err_gender").style.display="none";
-                str+="\nGender : "+gender[i].value;                
                 error=0;                
                 break;
             }
@@ -120,7 +113,7 @@ function validate(){
     validate_dob();
     validate_status();
     if(error==0){
-       console.log(str);
+        print_data();
         return true;
     }
     else{
