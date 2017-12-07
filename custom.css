@@ -34,5 +34,9 @@ margin-bottom:20px;
 .logo img{
 height:200px;
 }
-
+.error{
+    font-weight: 700;
+    color:red;
+    margin-left: 10px;
+}
 

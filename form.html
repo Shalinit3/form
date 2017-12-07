@@ -19,7 +19,10 @@
 				    <label class="field control-label col-sm-12" for="fname">First Name</label>
 				    <div class="col-sm-10">
 				      <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter first name"  >
-				    </div>
+						</div>
+						<div class="col-sm-12">
+							<span id="err_fname" class="error"></span>
+						</div>
 				  </div>
 			  </div>
 			  <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 block">
@@ -27,7 +30,10 @@
 				    <label class=" field control-label col-sm-12" for="lname">Last Name</label>
 				    <div class="col-sm-10"> 
 				      <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter last name">
-				    </div>
+						</div>
+						<div class="col-sm-12">
+								<span id="err_lname" class="error"></span>
+						</div>
 				  </div>
 			  </div>
 
@@ -35,8 +41,11 @@
 				  <div class="form-group">
 				    <label class=" field control-label col-sm-12" for="email">Email</label>
 				    <div class="col-sm-10"> 
-				      <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email Address" >
-				    </div>
+				      <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email Address" >
+						</div>
+						<div class="col-sm-12">
+								<span id="err_email" class="error"></span>
+						</div>
 				  </div>
 			  </div>
 				<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 block">
@@ -44,7 +53,10 @@
 				    <label class=" field control-label col-sm-12" for="phone">Phone Number</label>
 				    <div class="col-sm-10"> 
 				      <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter Phone Number"  >
-				    </div>
+						</div>
+						<div class="col-sm-12">
+								<span id="err_phone" class="error"></span>
+						</div>
 				  </div>
 				</div>
 				<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 block">
@@ -55,14 +67,20 @@
 				      <input type="radio" class="gender" name="gender" value="female" > <label class="field" for="female">Female </label>
 				      <input type="radio" class="gender" name="gender" value="other" > <label class="field" for="other">Other </label>
 				    </div>
-				  </div>
+					</div>
+					<div class="col-sm-12">
+							<span id="err_gender" class="error"></span>
+					</div>
 				</div>
  			  <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 block">
 				  <div class="form-group">
 				    <label class=" field control-label col-sm-12" for="dob">Date of Birth</label>
 				    <div class="col-sm-10"> 
 				      <input type="date" class="form-control" id="dob" name="dob" />
-				    </div>
+						</div>
+						<div class="col-sm-12">
+								<span id="err_dob" class="error"></span>
+						</div>
 				  </div>
 			  </div>
 			  <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 block">
@@ -93,8 +111,11 @@
 			  <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 block">
 				  <div class="form-group">
 				    <div class="col-sm-10"> 
-				      <input type="checkbox" class="check" id="state" name="state" ><label class="field" for="male">I Agree to the Terms & Conditions</label>
-				    </div>
+				      <input type="checkbox" class="check" id="status" name="status" value="checked" ><label class="field" for="male">I Agree to the Terms & Conditions</label>
+						</div>
+						<div class="col-sm-12">
+								<span id="err_status" class="error"></span>
+						</div>
 				  </div>
 				</div>
         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 block">
