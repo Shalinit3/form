@@ -7,6 +7,19 @@ var phone=document.getElementById("phone").value;
 var state=document.getElementById("state").value;
 var country=document.getElementById("nation").value;
 var dob=document.getElementById("dob").value;
-
-console.log("Name: "+fname);
+    if(fname.length<=0){
+        alert("Name Required");
+    }
+    if(gender.length<=0){
+        alert("Gender Required");
+    }
+    if(email.length<=0){
+        alert("Email Required");
+    }
+    if(phone.length<=0){
+        alert("Phone Number Required");
+    }
+    if(dob.length<=0){
+        alert("Date of Birth Required");
+    }
 }
