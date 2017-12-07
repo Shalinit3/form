@@ -1,47 +1,55 @@
 function validate(){
-    document.getElementById("err_fname").innerHTML=validate_fname(document.getElementById("fname").value);
-    document.getElementById("err_lname").innerHTML=validate_lname(document.getElementById("lname").value);
-    document.getElementById("err_gender").innerHTML=validate_gender(document.getElementsByName("gender"));
-    document.getElementById("err_email").innerHTML=validate_email(document.getElementById("email").value);
-    document.getElementById("err_phone").innerHTML=validate_phone(document.getElementById("phone").value);
-    document.getElementById("err_dob").innerHTML=validate_dob(document.getElementById("dob").value);
-    document.getElementById("err_status").innerHTML=validate_status(document.getElementById("status").checked);
+    var error=0;
+    validate_fname(document.getElementById("fname").value);
+    validate_lname(document.getElementById("lname").value);
+    validate_gender(document.getElementsByName("gender"));
+    validate_email(document.getElementById("email").value);
+    validate_phone(document.getElementById("phone").value);
+    validate_dob(document.getElementById("dob").value);
+    validate_status(document.getElementById("status").checked);
 
     function validate_email( email){
         var reg=/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
         if(!reg.test(email)){
-        return "*Please Enter a valid Mail Address";
+            document.getElementById("err_email").innerHTML="*Please enter a valid Mail Address";
+            error=1;
         }
     }
     function validate_phone(phone){
         var reg=/^(\+\d{1,2})?\(?\d{3}\)?\d{3}\d{4}$/;
         if(!reg.test(phone)){
-        return "*Please Enter a valid Phone Number";
+            document.getElementById("err_phone").innerHTML="*Please enter a valid Phone Number";
+            error=1;
+            
         }
     }
     function validate_fname(fname){
         var reg=/([A-Za-z][a-zA-Z0-9]*)/;
         if(!reg.test(fname)){
-            return "*Please Enter a valid First name";
+            document.getElementById("err_fname").innerHTML="*Please enter a valid First name";
+            error=1;
+            
         }
     }
 
     function validate_lname(lname){
         var reg=/([A-Za-z][a-zA-Z0-9]*)/;
         if((lname.length>0) && !reg.test(lname)){
-        return "*Please Enter a valid Last Number";
-            
+            document.getElementById("err_lname").innerHTML="*Please enter a valid Last Name";
+            error=1;
         }
     } 
     function validate_status(status){
         if(!status){
-           return "*Please Select the following to proceed";
+            document.getElementById("err_status").innerHTML="*Please select the following to proceed";
+            error=1;            
         }
     } 
     
     function validate_dob(dob){
         if(dob.length==0){
-            return "*Please Select the DOB ";
+            document.getElementById("err_dob").innerHTML="*Please enter the DOB ";
+            error=1;            
         }
     }
     function validate_gender(gender){
@@ -50,9 +58,18 @@ function validate(){
                 break;
             }
             if(!gender[i].checked && i==2){
-              return "*Please Select the Gender"; 
-
+                document.getElementById("err_gender").innerHTML="*Please select the Gender"; 
+                error=1;
+                
             }
         }
     } 
+
+    if(error==0){
+        return true;
+    }
+    else{
+        return false;
+    }
+
 }
