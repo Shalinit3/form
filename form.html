@@ -12,59 +12,67 @@
 			</center>
 
 		<div class="row main">
-			   <h3 class="field heading"> Register Here </h3>
+			   <h3 class="field heading"> Register Here <span class="error"> *Required Fields</span> </h3>
 			<form class="form" >
 			  <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 block">
 				  <div class="form-group">
-				    <label class="field control-label col-sm-12" for="fname">First Name <span id="err_fname" class="error"></span></label>
+				    <label class="field control-label col-sm-12" for="fname">First Name<span class="error">*</span> </label>
 				    <div class="col-sm-10">
-				      <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter first name"  >
+							<input type="text" class="form-control" id="fname" name="fname" onchange="return validate_fname();"
+							 placeholder="Enter first name"  >
+							<span id="err_fname" class="error"></span>
 						</div>
 				  </div>
 			  </div>
 			  <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 block">
 				  <div class="form-group">
-				    <label class=" field control-label col-sm-12" for="lname">Last Name<span id="err_lname" class="error"></span>
+				    <label class=" field control-label col-sm-12" for="lname">Last Name</span>
 						</label>
 				    <div class="col-sm-10"> 
-				      <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter last name">
+				      <input type="text" class="form-control" id="lname" name="lname" onchange="return validate_lname();
+							" placeholder="Enter last name">
 						</div>
+						<span id="err_lname" class="error"></span>
 				  </div>
 			  </div>
 
 			  <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 block">
 				  <div class="form-group">
-				    <label class=" field control-label col-sm-12" for="email">Email<span id="err_email" class="error"></span>
-						</label>
+				    <label class=" field control-label col-sm-12" for="email">Email<span class="error">*</span></label>
 				    <div class="col-sm-10"> 
-				      <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email Address" >
+				      <input type="text" class="form-control" id="email" name="email" onchange="return validate_email();" placeholder="Enter Email Address" >
 						</div>
+						<span id="err_email" class="error"></span>
 				  </div>
 			  </div>
 				<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 block">
 				  <div class="form-group">
-				    <label class=" field control-label col-sm-12" for="phone">Phone Number	<span id="err_phone" class="error"></span></label>
+				    <label class=" field control-label col-sm-12" for="phone">Phone Number<span class="error">*</span></label>
 				    <div class="col-sm-10"> 
-				      <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter Phone Number"  >
+							<input type="text" class="form-control" id="phone" name="phone" onchange="return validate_phone();" placeholder="Enter Phone Number" maxlength="10" 
+							   onkeypress='return event.charCode >= 48 && event.charCode <= 57'  >
 						</div>
+						<span id="err_phone" class="error"></span>
 				  </div>
 				</div>
 				<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 block">
 				  <div class="form-group">
-							<label class=" field control-label col-sm-12" for="phone">Gender <span id="err_gender" class="error"></span>  </label>
+							<label class=" field control-label col-sm-12" for="phone">Gender<span class="error">*</span>  </label>
 				    <div class="col-sm-10"> 
 				      <input type="radio" class="gender" name="gender" value="male" > <label class="field" for="male">Male </label>
 				      <input type="radio" class="gender" name="gender" value="female" > <label class="field" for="female">Female </label>
 				      <input type="radio" class="gender" name="gender" value="other" > <label class="field" for="other">Other </label>
-				    </div>
+						</div>
+						<span id="err_gender" class="error"></span> 
 					</div>
 				</div>
  			  <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 block">
 				  <div class="form-group">
-				    <label class=" field control-label col-sm-12" for="dob">Date of Birth <span id="err_dob" class="error"></span></label>
+				    <label class=" field control-label col-sm-12" for="dob">Date of Birth<span class="error">*</span> </label>
 				    <div class="col-sm-10"> 
 				      <input type="date" class="form-control" id="dob" name="dob" />
 						</div>
+						<span id="err_dob" class="error"></span>
 				  </div>
 			  </div>
 			  <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 block">
@@ -95,8 +103,9 @@
 			  <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 block">
 				  <div class="form-group">
 				    <div class="col-sm-10"> 
-							<input type="checkbox" class="check" id="status" name="status" value="checked" >
-							<label class="field" for="status">I Agree to the Terms & Conditions<span id="err_status" class="error"></span></label>
+							<input type="checkbox" class="check" id="status" name="status" value="checked" > 
+							<label class="field" for="status">I Agree to the Terms & Conditions</label>
+							<span id="err_status" class="error"></span>
 						</div>
 				  </div>
 				</div>
