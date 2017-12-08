@@ -67,3 +67,43 @@ function testHoisting() {
     console.log ( i );
 }
 
+function testArrow() {
+    var sum = (x , y)=> {
+       return (x + y);
+    } 
+    console.log( sum(20 ,30) );
+}
+
+function testCallBack() {
+    var studentRecord = { name: 'Shalini' , age: '66' , city: 'Ghaziabad' , state: 'UP' , phone: '9716532042' }
+
+    function showStudentDetails( student ) {
+        console.log("Name : " + student.name + "\tAge : " + student.age + "\tCity : " + student.city + "\tState: "
+         + student.state + "\tPhone : " + student.phone);
+    }
+
+    function callback() {
+        console.log ( '5 times printing done.' );
+    }
+
+    function changeAge() {
+        studentRecord.age = '21';
+        console.log("Age Changed");
+    }
+
+    function printFiveTimes(student , callback ) {
+        for(i = 0; i < 5 ; i++) {
+            console.log( showStudentDetails(studentRecord) );
+        }
+        setTimeout(function() {
+            callback();
+        }, 2000)
+        
+    }
+
+    console.log( showStudentDetails(studentRecord) );
+    console.log( printFiveTimes (studentRecord , callback) );
+    console.log( changeAge() );
+    
+}
+
