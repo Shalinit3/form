@@ -113,7 +113,6 @@ function validate(){
     validate_dob();
     validate_status();
     if(error==0){
-        print_data();
         return true;
     }
     else{
